@@ -1,0 +1,168 @@
+body{
+	background: linear-gradient(90deg, purple, black, blue);
+}
+p, li{
+	font-family: 'Lato', sans-serif;
+}
+h1, h2, h3{
+	font-family: 'Roboto Condsnsed', sans-serif;
+}
+
+header, footer{
+	color: white;
+	text-align: center;
+}
+
+
+/* image style */
+img{
+	width: 300px;
+	height: 150px;
+}
+
+/*	style for main container and item*/
+.main-container{
+	display: grid;
+	justify-content: space-around;
+	grid-column: auto auto auto;
+	grid-column-gap: 0.5em;
+
+}
+.main-item{
+	background: lightgrey;
+	padding: 0.3em;
+
+	animation-name: fade-in;
+	animation-duration: 2s;
+	animation-direction: alternate;
+}
+
+#article1{
+	grid-column:1 / 3; 
+}
+#article2{
+	grid-column: 3 / 4;
+}
+
+
+
+/* Article 1 style*/
+.content-container{
+	display: grid;
+	grid-row-gap: 1em;
+}
+.content-item{
+	background-color: azure;
+	border:1px double;
+	padding: 0.3em;
+	text-align: justify;
+
+}
+
+.content-item:hover{
+	transform: scale(1.01);
+}
+
+/* Image style for article 1 */
+
+#subtitle-img{
+	float: right;
+	margin-left: 1em;
+}
+.image-container{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+
+}
+.image-item{
+	margin: 1em;	
+	transform: scale(1);
+	transition: transform 0.5s ease-in-out; 	
+}
+
+
+.image-item:hover{
+	transform: scale(1.1);		
+}
+
+
+/* Article 2 style*/
+.post-container{
+	display: flex;
+	flex-direction: column;
+
+}
+.post-item{
+	background-color: lightblue;
+	margin-bottom: 0.5em;
+	padding: 0.3em;
+	text-align: justify;
+	border: 1px solid;
+}
+.post-item:hover{
+	transform: scale(1.02);
+}
+
+input{
+	display: block;
+	height: 1.5em;
+	margin-bottom: 5px;
+}
+input[type=submit]{
+	height: 2em;
+	border: none;
+	width: 4em;
+	background-color: #57bf49 ;
+	transition: all 2s ease-in-out;
+}
+input[type=submit]:hover{
+	width: 6em;
+	background-color: #19c910;
+}
+
+/* button  animation from  scratch */
+button{
+	height: 2em;
+	border: none;
+	width: auto;
+	background-color: #57bf49 ;
+	animation: btn-animation 8s ease 0s infinite reverse;
+
+}/*
+button:hover{
+		transform: matrix(1, 0.10, 0.20, 1, 100, 200);
+
+}*/
+
+
+@keyframes btn-animation{
+	0%, 100%{
+		transform: translate(0 , 0);
+		background: yellow;
+		/*transform: rotate(90deg);*/
+	}
+	25%{
+		transform: translate(0, 50%);
+		background: green;
+		color: white;
+		/*transform: rotate(180deg);*/
+	}
+	50%{
+		transform: translate(100% , 50%);
+		background: blue;
+		color: white;
+		/*transform: rotate(270deg);*/
+	}
+	75%{
+		transform: translate(100% , 0);
+		background: red;
+		color: white;
+		/*transform: rotate(360deg);*/
+	}
+
+}
+@keyframes fade-in{
+	from{opacity: 0.5;}
+	to{opacity: 1;}
+}
